@@ -12,6 +12,7 @@ class LegalScreen extends StatelessWidget {
     print(rcvdData['loadurl']);
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         leading: BackButton(
           color: Colors.black,
           onPressed: () {

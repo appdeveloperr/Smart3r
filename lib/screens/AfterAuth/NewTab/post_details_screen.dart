@@ -17,6 +17,7 @@ class _PostDetialScreenState extends State<PostDetialScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         iconTheme: IconThemeData(color: Colors.black),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.end,
@@ -230,8 +231,6 @@ class _PostDetialScreenState extends State<PostDetialScreen> {
                                         ),
                                         child: InkWell(
                                           onTap: () {
-                                            // Navigator.of(context).pushNamed(
-                                            //     SourceListScreen.routeName);
                                             Navigator.push(
                                                 context,
                                                 SlideLeftRoute(

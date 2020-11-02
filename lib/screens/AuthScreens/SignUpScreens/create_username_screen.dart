@@ -30,6 +30,7 @@ class _CreateUserNameState extends State<CreateUserName> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         title: Text(
           "Sign up",
           style: TextStyle(

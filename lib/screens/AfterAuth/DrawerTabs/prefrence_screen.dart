@@ -127,6 +127,7 @@ class _PrefrenceScreenState extends State<PrefrenceScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         leading: BackButton(
           color: Colors.black,
           onPressed: () {

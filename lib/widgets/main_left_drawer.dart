@@ -44,8 +44,6 @@ class MainLeftDrawer extends StatelessWidget {
           ),
           _buildSeparatorLine(),
           _buildListTile("Login", () {
-            // Navigator.of(context)
-            //     .pushReplacementNamed(ChooseAuthTypeScreen.routeName);
             Navigator.push(
                 context, SlideLeftRoute(page: ChooseAuthTypeScreen()));
           }),
@@ -59,7 +57,6 @@ class MainLeftDrawer extends StatelessWidget {
           }),
           _buildSeparatorLine(),
           _buildListTile("Legal", () {
-            //Navigator.of(context).pushReplacementNamed(LegalScreen.routeName);
             Navigator.of(context).pushNamed(LegalScreen.routeName, arguments: {
               "loadurl": "https://www.technewsworld.com/perl/section/tech-blog"
             });

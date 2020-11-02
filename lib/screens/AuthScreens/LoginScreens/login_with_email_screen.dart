@@ -15,6 +15,7 @@ class _LoginWithEmailScreenState extends State<LoginWithEmailScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         title: Text(
           "Login",
           style: TextStyle(

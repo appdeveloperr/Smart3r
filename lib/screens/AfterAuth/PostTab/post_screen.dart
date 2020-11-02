@@ -17,6 +17,23 @@ class _PostScreenState extends State<PostScreen> {
 
   @override
   Widget build(BuildContext context) {
+    // replace this function with the code in the examples
+    Widget _myListView(BuildContext context) {
+      return ListView(
+        children: <Widget>[
+          ListTile(
+            title: Text('Sun'),
+          ),
+          ListTile(
+            title: Text('Moon'),
+          ),
+          ListTile(
+            title: Text('Star'),
+          ),
+        ],
+      );
+    }
+
     final mediaQuery = MediaQuery.of(context);
     void _showDialog() {
       // flutter defined function
@@ -41,91 +58,88 @@ class _PostScreenState extends State<PostScreen> {
     }
 
     return Scaffold(
-      body: SingleChildScrollView(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        elevation: 0,
+        title: Container(
+          color: Theme.of(context).primaryColor,
+          child: Row(
+            children: <Widget>[
+              Expanded(
+                child: InkWell(
+                  onTap: () {
+                    Navigator.of(context).pushReplacementNamed("/");
+                  },
+                  child: Container(
+                    height: 50,
+                    alignment: Alignment.center,
+                    color: Theme.of(context).primaryColor,
+                    child: Text(
+                      "Cancel",
+                      style: TextStyle(
+                        color: Color.fromRGBO(19, 25, 70, 1),
+                        fontSize: 17,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Expanded(
+                child: InkWell(
+                  onTap: _showDialog,
+                  child: Container(
+                    alignment: Alignment.center,
+                    color: Theme.of(context).primaryColor,
+                    child: Text(
+                      "Validate",
+                      style: TextStyle(
+                        color: Color.fromRGBO(19, 25, 70, 1),
+                        fontSize: 17,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+      body: Container(
+        margin: EdgeInsets.only(left: 15, right: 15, top: 20),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              padding: EdgeInsets.only(top: 30),
-              color: Theme.of(context).primaryColor,
-              child: Row(
-                children: <Widget>[
-                  Expanded(
-                    child: InkWell(
-                      onTap: () {
-                        Navigator.of(context).pushReplacementNamed("/");
-                      },
-                      child: Container(
-                        height: 50,
-                        alignment: Alignment.center,
-                        color: Theme.of(context).primaryColor,
-                        child: Text(
-                          "Cancel",
-                          style: TextStyle(
-                            color: Color.fromRGBO(19, 25, 70, 1),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: InkWell(
-                      onTap: _showDialog,
-                      child: Container(
-                        height: 56,
-                        alignment: Alignment.center,
-                        color: Theme.of(context).primaryColor,
-                        child: Text(
-                          "Validate",
-                          style: TextStyle(
-                            color: Color.fromRGBO(19, 25, 70, 1),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
+              height: 220,
+              child: TextField(
+                maxLines: 10,
+                maxLength: 300,
+                decoration: InputDecoration(
+                  alignLabelWithHint: true,
+                  border: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.teal)),
+                  hintText: 'Write here your anecdote. Maximum 300 characters',
+                  labelText: 'Add New Post',
+                ),
               ),
             ),
             Container(
-              padding: EdgeInsets.all(25),
-              child: Column(
-                children: [
-                  TextField(
-                    maxLines: 8,
-                    maxLength: 300,
-                    decoration: InputDecoration(
-                      alignLabelWithHint: true,
-                      border: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.teal)),
-                      hintText:
-                          'Write here your anecdote. Maximum 300 characters',
-                      labelText: 'Add New Post',
-                    ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.all(5),
-                    child: Text(
-                      "Insert one or more links or of the sources. They will help us to check thevracity of the facts",
-                      style: TextStyle(
-                        color: Colors.grey,
-                      ),
-                    ),
-                  ),
-                  Container(
-                    height:
-                        (mediaQuery.size.height - mediaQuery.padding.top) * 0.5,
-                    child: ScrollConfiguration(
-                      behavior: MyBehavior(),
-                      child: ListView.builder(
-                        padding: EdgeInsets.only(top: 5),
-                        itemBuilder: (BuildContext ctx, int index) {
-                          return AddSourceItem(_updateNoOfSources);
-                        },
-                        itemCount: noOfSources,
-                      ),
-                    ),
-                  ),
-                ],
+              padding: EdgeInsets.all(5),
+              child: Text(
+                "Insert one or more links or of the sources. They will help us to check thevracity of the facts",
+                style: TextStyle(
+                  color: Colors.grey,
+                ),
+              ),
+            ),
+            Expanded(
+              child: ListView.builder(
+                padding: EdgeInsets.only(top: 5),
+                itemBuilder: (BuildContext ctx, int index) {
+                  return AddSourceItem(_updateNoOfSources);
+                },
+                itemCount: noOfSources,
               ),
             ),
           ],

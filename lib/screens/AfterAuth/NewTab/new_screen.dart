@@ -1,3 +1,4 @@
+import 'package:Anecdote/widgets/SlideLeftRoute.dart';
 import 'package:flappy_search_bar/flappy_search_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -78,7 +79,8 @@ class _NewScreenState extends State<NewScreen> {
               child: InkWell(
                 onTap: () {
                   // showSearch(context: context, delegate: Search(widget.list));
-                  Navigator.of(context).pushNamed(SearchScreen.routeName);
+                  // Navigator.of(context).pushNamed(SearchScreen.routeName);
+                  Navigator.push(context, SlideLeftRoute(page: SearchScreen()));
                 },
                 child: Container(
                   alignment: Alignment.center,

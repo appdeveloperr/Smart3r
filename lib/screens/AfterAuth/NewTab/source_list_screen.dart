@@ -14,9 +14,10 @@ class SourceListScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+          elevation: 0,
           leading: BackButton(
-        color: Colors.black,
-      )),
+            color: Colors.black,
+          )),
       body: Container(
         child: ListView.builder(
           itemBuilder: (BuildContext ctx, int index) {

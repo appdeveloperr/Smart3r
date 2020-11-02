@@ -29,51 +29,55 @@ class ContactUsScreen extends StatelessWidget {
     }
 
     return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        elevation: 0,
+        title: Container(
+          color: Theme.of(context).primaryColor,
+          child: Row(
+            children: <Widget>[
+              Expanded(
+                child: InkWell(
+                  onTap: () {
+                    Navigator.of(context).pushReplacementNamed("/");
+                  },
+                  child: Container(
+                    height: 50,
+                    alignment: Alignment.center,
+                    color: Theme.of(context).primaryColor,
+                    child: Text(
+                      "Cancel",
+                      style: TextStyle(
+                        color: Color.fromRGBO(19, 25, 70, 1),
+                        fontSize: 17,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Expanded(
+                child: InkWell(
+                  onTap: _showDialog,
+                  child: Container(
+                    alignment: Alignment.center,
+                    color: Theme.of(context).primaryColor,
+                    child: Text(
+                      "Validate",
+                      style: TextStyle(
+                        color: Color.fromRGBO(19, 25, 70, 1),
+                        fontSize: 17,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
-              padding: EdgeInsets.only(top: 30),
-              color: Theme.of(context).primaryColor,
-              child: Row(
-                children: <Widget>[
-                  Expanded(
-                    child: InkWell(
-                      onTap: () {
-                        Navigator.of(context).pushReplacementNamed("/");
-                      },
-                      child: Container(
-                        height: 50,
-                        alignment: Alignment.center,
-                        color: Theme.of(context).primaryColor,
-                        child: Text(
-                          "Cancel",
-                          style: TextStyle(
-                            color: Color.fromRGBO(19, 25, 70, 1),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: InkWell(
-                      onTap: _showDialog,
-                      child: Container(
-                        height: 50,
-                        alignment: Alignment.center,
-                        color: Theme.of(context).primaryColor,
-                        child: Text(
-                          "Validate",
-                          style: TextStyle(
-                            color: Color.fromRGBO(19, 25, 70, 1),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
             Container(
                 padding: EdgeInsets.all(25),
                 child: SingleChildScrollView(
