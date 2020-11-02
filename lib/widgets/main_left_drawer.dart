@@ -53,7 +53,7 @@ class MainLeftDrawer extends StatelessWidget {
           }),
           _buildSeparatorLine(),
           _buildListTile("Favorites", () {
-            Navigator.of(context).pushReplacementNamed('/');
+            Navigator.of(context).pop();
           }),
           _buildSeparatorLine(),
           _buildListTile("Legal", () {

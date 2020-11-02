@@ -1,3 +1,5 @@
+import 'package:Anecdote/screens/AfterAuth/tabs_screen.dart';
+import 'package:Anecdote/widgets/SlideRightRoute.dart';
 import 'package:flutter/material.dart';
 import '../../../widgets/add_source_item.dart';
 
@@ -68,7 +70,10 @@ class _PostScreenState extends State<PostScreen> {
               Expanded(
                 child: InkWell(
                   onTap: () {
-                    Navigator.of(context).pushReplacementNamed("/");
+                    // Navigator.of(context).pushReplacementNamed("/");
+                    Navigator.of(context).pop();
+                    Navigator.push(
+                        context, SlideRightRoute(page: TabsScreen()));
                   },
                   child: Container(
                     height: 50,

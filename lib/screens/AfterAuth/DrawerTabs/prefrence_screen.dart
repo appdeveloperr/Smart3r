@@ -131,10 +131,7 @@ class _PrefrenceScreenState extends State<PrefrenceScreen> {
         leading: BackButton(
           color: Colors.black,
           onPressed: () {
-            Navigator.push(
-                context,
-                PageTransition(
-                    type: PageTransitionType.rightToLeft, child: TabsScreen()));
+            Navigator.of(context).pop();
           },
         ),
       ),
@@ -360,7 +357,7 @@ class _PrefrenceScreenState extends State<PrefrenceScreen> {
                         textColor: Colors.white,
                         color: Color.fromRGBO(250, 116, 112, 1),
                         onPressed: () {
-                          Navigator.of(context).pushReplacementNamed("/");
+                          Navigator.of(context).pop();
                         },
                       ),
                     ),

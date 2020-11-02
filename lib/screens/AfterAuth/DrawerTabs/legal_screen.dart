@@ -16,7 +16,7 @@ class LegalScreen extends StatelessWidget {
         leading: BackButton(
           color: Colors.black,
           onPressed: () {
-            Navigator.of(context).pushReplacementNamed("/");
+            Navigator.of(context).pop();
           },
         ),
       ),

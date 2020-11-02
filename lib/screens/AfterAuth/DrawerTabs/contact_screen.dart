@@ -19,7 +19,7 @@ class ContactUsScreen extends StatelessWidget {
                 child: Text("Ok"),
                 onPressed: () {
                   Navigator.of(context).pop();
-                  Navigator.of(context).pushReplacementNamed("/");
+                  Navigator.of(context).pop();
                 },
               ),
             ],
@@ -39,7 +39,7 @@ class ContactUsScreen extends StatelessWidget {
               Expanded(
                 child: InkWell(
                   onTap: () {
-                    Navigator.of(context).pushReplacementNamed("/");
+                    Navigator.of(context).pop();
                   },
                   child: Container(
                     height: 50,
