@@ -4,6 +4,10 @@ import 'package:flutter/material.dart';
 import '../../../widgets/add_source_item.dart';
 
 class PostScreen extends StatefulWidget {
+  Function setHomeScreen;
+
+  PostScreen(this.setHomeScreen);
+
   @override
   _PostScreenState createState() => _PostScreenState();
 }
@@ -70,10 +74,7 @@ class _PostScreenState extends State<PostScreen> {
               Expanded(
                 child: InkWell(
                   onTap: () {
-                    // Navigator.of(context).pushReplacementNamed("/");
-                    Navigator.of(context).pop();
-                    Navigator.push(
-                        context, SlideRightRoute(page: TabsScreen()));
+                    widget.setHomeScreen();
                   },
                   child: Container(
                     height: 50,

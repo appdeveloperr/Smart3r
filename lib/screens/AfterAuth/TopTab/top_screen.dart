@@ -1,3 +1,4 @@
+import 'package:Anecdote/screens/AfterAuth/NewTab/new_screen.dart';
 import 'package:Anecdote/widgets/SlideRightRoute.dart';
 import 'package:flutter/material.dart';
 import '../../../widgets/new_post_widget.dart';
@@ -62,13 +63,13 @@ class _TopScreenState extends State<TopScreen> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        leading: BackButton(
-          color: Colors.black,
-          onPressed: () {
-            Navigator.of(context).pop();
-            Navigator.push(context, SlideRightRoute(page: TabsScreen()));
-          },
-        ),
+        // leading: BackButton(
+        //   color: Colors.black,
+        //   onPressed: () {
+        //     Navigator.of(context).pop();
+        //     Navigator.push(context, SlideRightRoute(page: TabsScreen()));
+        //   },
+        // ),
       ),
       body: Container(
         child: ListView.builder(

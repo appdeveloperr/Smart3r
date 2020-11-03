@@ -27,7 +27,7 @@ class _TabsScreenState extends State<TabsScreen> {
         'title': 'Top',
       },
       {
-        'page': PostScreen(),
+        'page': PostScreen(setHomeScreen),
         'title': 'Post',
       },
       {
@@ -42,6 +42,12 @@ class _TabsScreenState extends State<TabsScreen> {
   void _selectPage(int index) {
     setState(() {
       _selectedPageIndex = index;
+    });
+  }
+
+  void setHomeScreen() {
+    setState(() {
+      _selectedPageIndex = 0;
     });
   }
 

@@ -26,13 +26,13 @@ class _LanguageScreenState extends State<LanguageScreen> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        leading: BackButton(
-          color: Colors.black,
-          onPressed: () {
-            Navigator.of(context).pop();
-            Navigator.push(context, SlideRightRoute(page: TabsScreen()));
-          },
-        ),
+        // leading: BackButton(
+        //   color: Colors.black,
+        //   onPressed: () {
+        //     Navigator.of(context).pop();
+        //     Navigator.push(context, SlideRightRoute(page: TabsScreen()));
+        //   },
+        // ),
       ),
       body: Container(
         margin: EdgeInsets.fromLTRB(0, 40, 0, 0),
